@@ -1,0 +1,2314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2" level="2" version="1">
+  <model id="glycolysis">
+    <listOfCompartments>
+      <compartment id="C_c" name="Cytoplasm" size="1"/>
+      <compartment id="C_e" name="Extracellular" size="1"/>
+      <compartment id="genes" name="gene pool" size="1"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="M_glc_D_e" name="M_glc_D_e" compartment="C_e"/>
+      <species id="M_pep_c" name="M_pep_c" compartment="C_c"/>
+      <species id="M_g6p_c" name="M_g6p_c" compartment="C_c"/>
+      <species id="M_pyr_c" name="M_pyr_c" compartment="C_c"/>
+      <species id="M_2pg_c" name="M_2pg_c" compartment="C_c"/>
+      <species id="M_fdp_c" name="M_fdp_c" compartment="C_c"/>
+      <species id="M_dhap_c" name="M_dhap_c" compartment="C_c"/>
+      <species id="M_g3p_c" name="M_g3p_c" compartment="C_c"/>
+      <species id="M_f6p_c" name="M_f6p_c" compartment="C_c"/>
+      <species id="M_nadp_c" name="M_nadp_c" compartment="C_c"/>
+      <species id="M_6pgl_c" name="M_6pgl_c" compartment="C_c"/>
+      <species id="M_nadph_c" name="M_nadph_c" compartment="C_c"/>
+      <species id="M_nad_c" name="M_nad_c" compartment="C_c"/>
+      <species id="M_13dpg_c" name="M_13dpg_c" compartment="C_c"/>
+      <species id="M_nadh_c" name="M_nadh_c" compartment="C_c"/>
+      <species id="M_6pgc_c" name="M_6pgc_c" compartment="C_c"/>
+      <species id="M_co2_c" name="M_co2_c" compartment="C_c"/>
+      <species id="M_ru5p_D_c" name="M_ru5p_D_c" compartment="C_c"/>
+      <species id="M_coa_c" name="M_coa_c" compartment="C_c"/>
+      <species id="M_accoa_c" name="M_accoa_c" compartment="C_c"/>
+      <species id="M_atp_c" name="M_atp_c" compartment="C_c"/>
+      <species id="M_adp_c" name="M_adp_c" compartment="C_c"/>
+      <species id="M_3pg_c" name="M_3pg_c" compartment="C_c"/>
+      <species id="M_xu5p_D_c" name="M_xu5p_D_c" compartment="C_c"/>
+      <species id="M_r5p_c" name="M_r5p_c" compartment="C_c"/>
+      <species id="M_s7p_c" name="M_s7p_c" compartment="C_c"/>
+      <species id="M_e4p_c" name="M_e4p_c" compartment="C_c"/>
+      <species id="M_ac_c" name="M_ac_c" compartment="C_c"/>
+      <species id="M_etoh_c" name="M_etoh_c" compartment="C_c"/>
+      <species id="M_lac_D_c" name="M_lac_D_c" compartment="C_c"/>
+      <species id="b0008" name="b0008" compartment="genes"/>
+      <species id="b0114" name="b0114" compartment="genes"/>
+      <species id="b0115" name="b0115" compartment="genes"/>
+      <species id="b0116" name="b0116" compartment="genes"/>
+      <species id="b0755" name="b0755" compartment="genes"/>
+      <species id="b0767" name="b0767" compartment="genes"/>
+      <species id="b1676" name="b1676" compartment="genes"/>
+      <species id="b1723" name="b1723" compartment="genes"/>
+      <species id="b1773" name="b1773" compartment="genes"/>
+      <species id="b1779" name="b1779" compartment="genes"/>
+      <species id="b1852" name="b1852" compartment="genes"/>
+      <species id="b1854" name="b1854" compartment="genes"/>
+      <species id="b2029" name="b2029" compartment="genes"/>
+      <species id="b2097" name="b2097" compartment="genes"/>
+      <species id="b2464" name="b2464" compartment="genes"/>
+      <species id="b2465" name="b2465" compartment="genes"/>
+      <species id="b2779" name="b2779" compartment="genes"/>
+      <species id="b2914" name="b2914" compartment="genes"/>
+      <species id="b2925" name="b2925" compartment="genes"/>
+      <species id="b2926" name="b2926" compartment="genes"/>
+      <species id="b2935" name="b2935" compartment="genes"/>
+      <species id="b3386" name="b3386" compartment="genes"/>
+      <species id="b3612" name="b3612" compartment="genes"/>
+      <species id="b3916" name="b3916" compartment="genes"/>
+      <species id="b3919" name="b3919" compartment="genes"/>
+      <species id="b3925" name="b3925" compartment="genes"/>
+      <species id="b4025" name="b4025" compartment="genes"/>
+      <species id="b4090" name="b4090" compartment="genes"/>
+      <species id="b4232" name="b4232" compartment="genes"/>
+      <species id="b4301" name="b4301" compartment="genes"/>
+      <species id="b4395" name="b4395" compartment="genes"/>
+    </listOfSpecies>
+    <listOfReactions>
+      <reaction id="R_GLCpts" name="R_GLCpts" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_glc_D_e" stoichiometry="1"/>
+          <speciesReference species="M_pep_c" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_g6p_c" stoichiometry="1"/>
+          <speciesReference species="M_pyr_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_GND" name="R_GND" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b2029</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_6pgc_c" stoichiometry="1"/>
+          <speciesReference species="M_nadp_c" stoichiometry="1"/>
+          <speciesReference species="b2029" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_co2_c" stoichiometry="1"/>
+          <speciesReference species="M_nadph_c" stoichiometry="1"/>
+          <speciesReference species="M_ru5p_D_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PDH" name="R_PDH" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: ( b0114  and  b0115  and  b0116 )</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_coa_c" stoichiometry="1"/>
+          <speciesReference species="M_nad_c" stoichiometry="1"/>
+          <speciesReference species="M_pyr_c" stoichiometry="1"/>
+          <speciesReference species="b0114" stoichiometry="1"/>
+          <speciesReference species="b0115" stoichiometry="1"/>
+          <speciesReference species="b0116" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_accoa_c" stoichiometry="1"/>
+          <speciesReference species="M_co2_c" stoichiometry="1"/>
+          <speciesReference species="M_nadh_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PGL" name="R_PGL" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b0767</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_6pgl_c" stoichiometry="1"/>
+          <speciesReference species="b0767" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_6pgc_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_acetate" name="R_acetate" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_accoa_c" stoichiometry="1"/>
+          <speciesReference species="M_adp_c" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_coa_c" stoichiometry="1"/>
+          <speciesReference species="M_ac_c" stoichiometry="1"/>
+          <speciesReference species="M_atp_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_ethanol" name="R_ethanol" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_accoa_c" stoichiometry="1"/>
+          <speciesReference species="M_nadh_c" stoichiometry="2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_etoh_c" stoichiometry="1"/>
+          <speciesReference species="M_coa_c" stoichiometry="1"/>
+          <speciesReference species="M_nad_c" stoichiometry="2"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_lactate" name="R_lactate" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_nadh_c" stoichiometry="1"/>
+          <speciesReference species="M_pyr_c" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_lac_D_c" stoichiometry="1"/>
+          <speciesReference species="M_nad_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_EX_glc_e" name="R_EX_glc_e" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="M_glc_D_e" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="10"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="1"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_EX_ac_e" name="R_EX_ac_e" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_ac_c" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_EX_etoh_e" name="R_EX_etoh_e" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_etoh_c" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_EX_lac_D_e" name="R_EX_lac_D_e" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_lac_D_c" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_EX_pyr_e" name="R_EX_pyr_e" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_pyr_c" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_recycle_nad" name="R_recycle_nad" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_nadh_c" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_nad_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_recycle_nadp" name="R_recycle_nadp" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_nadph_c" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_nadp_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_ENO_f" name="R_ENO" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b2779</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_2pg_c" stoichiometry="1"/>
+          <speciesReference species="b2779" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_pep_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_ENO_b" name="R_ENO" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b2779</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_pep_c" stoichiometry="1"/>
+          <speciesReference species="b2779" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_2pg_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_G6PDH2r_f" name="R_G6PDH2r" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b1852</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_g6p_c" stoichiometry="1"/>
+          <speciesReference species="M_nadp_c" stoichiometry="1"/>
+          <speciesReference species="b1852" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_6pgl_c" stoichiometry="1"/>
+          <speciesReference species="M_nadph_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_G6PDH2r_b" name="R_G6PDH2r" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b1852</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_6pgl_c" stoichiometry="1"/>
+          <speciesReference species="M_nadph_c" stoichiometry="1"/>
+          <speciesReference species="b1852" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_g6p_c" stoichiometry="1"/>
+          <speciesReference species="M_nadp_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_GAPD_f" name="R_GAPD" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b1779</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+          <speciesReference species="M_nad_c" stoichiometry="1"/>
+          <speciesReference species="b1779" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_13dpg_c" stoichiometry="1"/>
+          <speciesReference species="M_nadh_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_GAPD_b" name="R_GAPD" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b1779</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_13dpg_c" stoichiometry="1"/>
+          <speciesReference species="M_nadh_c" stoichiometry="1"/>
+          <speciesReference species="b1779" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+          <speciesReference species="M_nad_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PGI_f" name="R_PGI" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b4025</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_g6p_c" stoichiometry="1"/>
+          <speciesReference species="b4025" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_f6p_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PGI_b" name="R_PGI" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b4025</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_f6p_c" stoichiometry="1"/>
+          <speciesReference species="b4025" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_g6p_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PGK_f" name="R_PGK" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b2926</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_3pg_c" stoichiometry="1"/>
+          <speciesReference species="M_atp_c" stoichiometry="1"/>
+          <speciesReference species="b2926" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_13dpg_c" stoichiometry="1"/>
+          <speciesReference species="M_adp_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PGK_b" name="R_PGK" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b2926</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_13dpg_c" stoichiometry="1"/>
+          <speciesReference species="M_adp_c" stoichiometry="1"/>
+          <speciesReference species="b2926" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_3pg_c" stoichiometry="1"/>
+          <speciesReference species="M_atp_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_TPI_f" name="R_TPI" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b3919</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_dhap_c" stoichiometry="1"/>
+          <speciesReference species="b3919" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_TPI_b" name="R_TPI" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b3919</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+          <speciesReference species="b3919" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_dhap_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_EX_co2_e_f" name="R_EX_co2_e" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_co2_c" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_EX_co2_e_b" name="R_EX_co2_e" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="M_co2_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_FBP_pc1" name="R_FBP" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b3925)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_fdp_c" stoichiometry="1"/>
+          <speciesReference species="b3925" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_f6p_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_FBP_pc2" name="R_FBP" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b4232)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_fdp_c" stoichiometry="1"/>
+          <speciesReference species="b4232" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_f6p_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PFK_pc1" name="R_PFK" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b1723)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_atp_c" stoichiometry="1"/>
+          <speciesReference species="M_f6p_c" stoichiometry="1"/>
+          <speciesReference species="b1723" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_adp_c" stoichiometry="1"/>
+          <speciesReference species="M_fdp_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PFK_pc2" name="R_PFK" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b3916)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_atp_c" stoichiometry="1"/>
+          <speciesReference species="M_f6p_c" stoichiometry="1"/>
+          <speciesReference species="b3916" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_adp_c" stoichiometry="1"/>
+          <speciesReference species="M_fdp_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PYK_pc1" name="R_PYK" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b1676)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_adp_c" stoichiometry="1"/>
+          <speciesReference species="M_pep_c" stoichiometry="1"/>
+          <speciesReference species="b1676" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_atp_c" stoichiometry="1"/>
+          <speciesReference species="M_pyr_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PYK_pc2" name="R_PYK" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b1854)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_adp_c" stoichiometry="1"/>
+          <speciesReference species="M_pep_c" stoichiometry="1"/>
+          <speciesReference species="b1854" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_atp_c" stoichiometry="1"/>
+          <speciesReference species="M_pyr_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_FBA_f_pc1" name="R_FBA" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b1773)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_fdp_c" stoichiometry="1"/>
+          <speciesReference species="b1773" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_dhap_c" stoichiometry="1"/>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_FBA_f_pc2" name="R_FBA" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b2097)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_fdp_c" stoichiometry="1"/>
+          <speciesReference species="b2097" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_dhap_c" stoichiometry="1"/>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_FBA_f_pc3" name="R_FBA" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b2925)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_fdp_c" stoichiometry="1"/>
+          <speciesReference species="b2925" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_dhap_c" stoichiometry="1"/>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_FBA_b_pc1" name="R_FBA" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b1773)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_dhap_c" stoichiometry="1"/>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+          <speciesReference species="b1773" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_fdp_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_FBA_b_pc2" name="R_FBA" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b2097)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_dhap_c" stoichiometry="1"/>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+          <speciesReference species="b2097" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_fdp_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_FBA_b_pc3" name="R_FBA" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b2925)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_dhap_c" stoichiometry="1"/>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+          <speciesReference species="b2925" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_fdp_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PGM_f_pc1" name="R_PGM" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b0755)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_2pg_c" stoichiometry="1"/>
+          <speciesReference species="b0755" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_3pg_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PGM_f_pc2" name="R_PGM" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b3612)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_2pg_c" stoichiometry="1"/>
+          <speciesReference species="b3612" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_3pg_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PGM_f_pc3" name="R_PGM" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b4395)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_2pg_c" stoichiometry="1"/>
+          <speciesReference species="b4395" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_3pg_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PGM_b_pc1" name="R_PGM" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b0755)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_3pg_c" stoichiometry="1"/>
+          <speciesReference species="b0755" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_2pg_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PGM_b_pc2" name="R_PGM" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b3612)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_3pg_c" stoichiometry="1"/>
+          <speciesReference species="b3612" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_2pg_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PGM_b_pc3" name="R_PGM" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b4395)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_3pg_c" stoichiometry="1"/>
+          <speciesReference species="b4395" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_2pg_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_RPE_f_pc1" name="R_RPE" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b3386)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_ru5p_D_c" stoichiometry="1"/>
+          <speciesReference species="b3386" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_xu5p_D_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_RPE_f_pc2" name="R_RPE" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b4301)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_ru5p_D_c" stoichiometry="1"/>
+          <speciesReference species="b4301" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_xu5p_D_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_RPE_b_pc1" name="R_RPE" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b3386)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_xu5p_D_c" stoichiometry="1"/>
+          <speciesReference species="b3386" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_ru5p_D_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_RPE_b_pc2" name="R_RPE" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b4301)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_xu5p_D_c" stoichiometry="1"/>
+          <speciesReference species="b4301" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_ru5p_D_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_RPI_f_pc1" name="R_RPI" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b2914)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_r5p_c" stoichiometry="1"/>
+          <speciesReference species="b2914" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_ru5p_D_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_RPI_f_pc2" name="R_RPI" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b4090)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_r5p_c" stoichiometry="1"/>
+          <speciesReference species="b4090" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_ru5p_D_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_RPI_b_pc1" name="R_RPI" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b2914)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_ru5p_D_c" stoichiometry="1"/>
+          <speciesReference species="b2914" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_r5p_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_RPI_b_pc2" name="R_RPI" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b4090)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_ru5p_D_c" stoichiometry="1"/>
+          <speciesReference species="b4090" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_r5p_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_TALA_f_pc1" name="R_TALA" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b0008)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+          <speciesReference species="M_s7p_c" stoichiometry="1"/>
+          <speciesReference species="b0008" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_e4p_c" stoichiometry="1"/>
+          <speciesReference species="M_f6p_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_TALA_f_pc2" name="R_TALA" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b2464)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+          <speciesReference species="M_s7p_c" stoichiometry="1"/>
+          <speciesReference species="b2464" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_e4p_c" stoichiometry="1"/>
+          <speciesReference species="M_f6p_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_TALA_b_pc1" name="R_TALA" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b0008)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_e4p_c" stoichiometry="1"/>
+          <speciesReference species="M_f6p_c" stoichiometry="1"/>
+          <speciesReference species="b0008" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+          <speciesReference species="M_s7p_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_TALA_b_pc2" name="R_TALA" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b2464)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_e4p_c" stoichiometry="1"/>
+          <speciesReference species="M_f6p_c" stoichiometry="1"/>
+          <speciesReference species="b2464" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+          <speciesReference species="M_s7p_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_TKT1_f_pc1" name="R_TKT1" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b2465)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_r5p_c" stoichiometry="1"/>
+          <speciesReference species="M_xu5p_D_c" stoichiometry="1"/>
+          <speciesReference species="b2465" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+          <speciesReference species="M_s7p_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_TKT1_f_pc2" name="R_TKT1" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b2935)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_r5p_c" stoichiometry="1"/>
+          <speciesReference species="M_xu5p_D_c" stoichiometry="1"/>
+          <speciesReference species="b2935" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+          <speciesReference species="M_s7p_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_TKT1_b_pc1" name="R_TKT1" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b2465)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+          <speciesReference species="M_s7p_c" stoichiometry="1"/>
+          <speciesReference species="b2465" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_r5p_c" stoichiometry="1"/>
+          <speciesReference species="M_xu5p_D_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_TKT1_b_pc2" name="R_TKT1" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b2935)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+          <speciesReference species="M_s7p_c" stoichiometry="1"/>
+          <speciesReference species="b2935" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_r5p_c" stoichiometry="1"/>
+          <speciesReference species="M_xu5p_D_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_TKT2_f_pc1" name="R_TKT2" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b2465)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_e4p_c" stoichiometry="1"/>
+          <speciesReference species="M_xu5p_D_c" stoichiometry="1"/>
+          <speciesReference species="b2465" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_f6p_c" stoichiometry="1"/>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_TKT2_f_pc2" name="R_TKT2" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b2935)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_e4p_c" stoichiometry="1"/>
+          <speciesReference species="M_xu5p_D_c" stoichiometry="1"/>
+          <speciesReference species="b2935" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_f6p_c" stoichiometry="1"/>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_TKT2_b_pc1" name="R_TKT2" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b2465)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_f6p_c" stoichiometry="1"/>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+          <speciesReference species="b2465" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_e4p_c" stoichiometry="1"/>
+          <speciesReference species="M_xu5p_D_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_TKT2_b_pc2" name="R_TKT2" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b2935)</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_f6p_c" stoichiometry="1"/>
+          <speciesReference species="M_g3p_c" stoichiometry="1"/>
+          <speciesReference species="b2935" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_e4p_c" stoichiometry="1"/>
+          <speciesReference species="M_xu5p_D_c" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b0008" name="u_b0008" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b0008" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b0114" name="u_b0114" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b0114" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b0115" name="u_b0115" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b0115" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b0116" name="u_b0116" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b0116" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b0755" name="u_b0755" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b0755" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b0767" name="u_b0767" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b0767" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b1676" name="u_b1676" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b1676" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b1723" name="u_b1723" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b1723" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b1773" name="u_b1773" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b1773" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b1779" name="u_b1779" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b1779" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b1852" name="u_b1852" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b1852" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b1854" name="u_b1854" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b1854" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b2029" name="u_b2029" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b2029" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b2097" name="u_b2097" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b2097" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b2464" name="u_b2464" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b2464" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b2465" name="u_b2465" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b2465" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b2779" name="u_b2779" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b2779" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b2914" name="u_b2914" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b2914" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b2925" name="u_b2925" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b2925" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b2926" name="u_b2926" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b2926" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b2935" name="u_b2935" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b2935" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b3386" name="u_b3386" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b3386" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b3612" name="u_b3612" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b3612" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b3916" name="u_b3916" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b3916" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b3919" name="u_b3919" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b3919" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b3925" name="u_b3925" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b3925" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b4025" name="u_b4025" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b4025" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b4090" name="u_b4090" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b4090" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b4232" name="u_b4232" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b4232" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b4301" name="u_b4301" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b4301" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="u_b4395" name="u_b4395" reversible="false">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: </p>
+          </html>
+        </notes>
+        <listOfProducts>
+          <speciesReference species="b4395" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 0 </cn>
+          </math>
+          <listOfParameters>
+            <parameter id="LOWER_BOUND" value="0"/>
+            <parameter id="UPPER_BOUND" value="1000"/>
+            <parameter id="OBJECTIVE_COEFFICIENT" value="0"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

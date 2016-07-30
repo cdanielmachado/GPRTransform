@@ -1,0 +1,27 @@
+{
+    "name": "ishii2007", 
+    "reference": "http://www.sciencemag.org/content/316/5824/593.short",
+    "description": "Dataset from Ishii et al 2007 for E.coli (chemostat growth).",
+    "organism": "Escherichia coli",
+    "strain": "Escherichia coli K-12 BW25113",
+    
+    "conditions": ["WT_0.2h-1", "WT_0.1h-1", "WT_0.4h-1", "WT_0.5h-1", "WT_0.7h-1", "galM", "glk", "pgm", "pgi", "pfkA", "pfkB", "fbp", "fbaB", "gapC", "gpmA", "gpmB", "pykA", "pykF", "ppsA", "zwf", "pgl", "gnd", "rpe", "rpiA", "rpiB", "tktA", "tktB", "talA", "talB"],
+    
+    "carbon_source": ["glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc", "glc"],
+
+    "aerobic": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+
+    "gene_deletions": [null, null, null, null, null, "b0756", "b2388", "b0688", "b4025", "b3916", "b1723", "b4232", "b2097", "b4493", "b0755", "b3612", "b1854", "b1676", "b1702", "b1852", "b0767", "b2029", "b3386", "b2914", "b4090", "b2935", "b2465", "b2464", "b0008"],
+
+    "growth_rate": [0.2, 0.1, 0.4, 0.5, 0.7, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2],    
+    
+    "fluxomics": {
+    	"datafile": "fluxomics.csv",
+    	"units": "mmol/gDW/h"
+    },
+    
+    "transcriptomics": {
+    	"datafile": "transcriptomics.csv",
+    	"units": "nmol/gDW"
+    }
+}
